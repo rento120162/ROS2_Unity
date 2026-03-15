@@ -54,7 +54,7 @@ sudo apt install dotnet-sdk-6.0
 ```
 ```bash
 echo 'export ROS_DISTRO=humble' >> ~/.bashrc
-echo 'export RMW_IMPLEMENTATION=rmw_fastrtps_cpp ' >> ~/.bashrc
+echo 'export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp ' >> ~/.bashrc
 source ~/.bashrc
 ```
 ```bash
