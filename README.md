@@ -98,7 +98,7 @@ If PC is connected to Oculus that is set developper mode , it appers here
 
 
 Build and run
-and then you can recieve topic from Unity
+and then you can recieve topic from Unity  
 Note: Make sure to connect all target devices to the same Wifi network 
 <img width="788" height="912" alt="Screenshot from 2026-03-09 17-03-49" src="https://github.com/user-attachments/assets/23038745-b094-49ba-93d0-0856ec41e409" />
 
