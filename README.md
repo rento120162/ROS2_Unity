@@ -7,10 +7,11 @@
 # ROS2_Unity
 Communicate between ROS2 and Unity on PC or Android or Oculus Quest
 
-Tested systems and ROS2 distro
+## REQUIREMENTS
 - Ubuntu 22.04
 - ROS2 Humble
-- Unity editor 2022.3.62f3 or later
+- Unity editor 2022.3.62f3 (or later)
+- local Wifi
 
 # References
 - [https://qiita.com/hiro-han/items/a28f8e86c175c2765056](https://qiita.com/hiro-han/items/a28f8e86c175c2765056)
@@ -19,15 +20,7 @@ Tested systems and ROS2 distro
 - [https://qiita.com/Kotakku/items/cdc3eca89dd8aec4ee86](https://qiita.com/Kotakku/items/cdc3eca89dd8aec4ee86)
 
 # Setup
-## 1.Make ROS container
-```bash
-git clone https://github.com/KobeKosenRobotics/rosenv.git
-or If you use Jetson, choose below repo 
-# git clone https://github.com/KobeKosenRobotics/rosenv_for_unitree
-```
-Follow to the README of below to learn How to make container [https://github.com/KobeKosenRobotics/rosenv.git](https://github.com/KobeKosenRobotics/rosenv.git)
-
-## 2.Install essential packages to docker
+## 1.Install essential packages to docker
 ```bash
 sudo apt update
 sudo apt install locales
@@ -54,7 +47,7 @@ sudo apt install dotnet-sdk-6.0
 ```
 ```bash
 echo 'export ROS_DISTRO=humble' >> ~/.bashrc
-echo 'export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp ' >> ~/.bashrc
+echo 'export RMW_IMPLEMENTATION=rmw_fastrtps_cpp ' >> ~/.bashrc
 source ~/.bashrc
 ```
 ```bash
@@ -68,7 +61,7 @@ source /opt/ros/humble/setup.bash
 
 ```
 
-## 3.Create Unity projects
+## 2.Create Unity projects
 Make sure Unity editor version is later than 2022.3.xx
 <img width="1164" height="806" alt="Screenshot from 2026-03-09 16-58-20" src="https://github.com/user-attachments/assets/8dffd198-c493-4802-afad-413ac9300c4b" />
 
@@ -78,10 +71,10 @@ Switch build platform from PC to Android
 Install XR Plugin Management 
 <img width="1393" height="806" alt="Screenshot from 2026-03-09 16-59-53" src="https://github.com/user-attachments/assets/2c84509c-fae4-4c12-9c59-74b7019d6673" />
 
-Put check mark onto Oculus
+Check the target device (Ex. Oculus)
 <img width="1393" height="806" alt="Screenshot from 2026-03-09 17-00-17" src="https://github.com/user-attachments/assets/772d4564-8516-4182-9de7-32f89b67f985" />
 
-Chenge build setting for Android
+Change build setting to Android
 <img width="1393" height="806" alt="Screenshot from 2026-03-09 17-01-01" src="https://github.com/user-attachments/assets/f81b320b-f1d5-40e4-ba69-b976a6053a00" />
 
 Make sure to import package "for Oculus"
@@ -105,8 +98,10 @@ If PC is connected to Oculus that is set developper mode , it appers here
 
 
 Build and run
-and then you can recieve topic from Oculus
+and then you can recieve topic from Unity
+Note: Make sure to connect all target devices to the same Wifi network 
 <img width="788" height="912" alt="Screenshot from 2026-03-09 17-03-49" src="https://github.com/user-attachments/assets/23038745-b094-49ba-93d0-0856ec41e409" />
+
 
 
 
